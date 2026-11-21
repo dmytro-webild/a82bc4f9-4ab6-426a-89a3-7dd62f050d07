@@ -131,23 +131,23 @@ const FooterLimeWordmark = ({
             </div>
           )}
         </div>
-        <div className="flex flex-col gap-4 pt-4 border-t border-white/10 lg:flex-row lg:items-end lg:justify-between">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col items-center justify-center text-center gap-4 pt-4 border-t border-white/10 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-center">
             <AcsLogoIcon className="h-[clamp(3rem,7vw,5.5rem)] w-auto shrink-0" />
             <MaskedLineReveal
               tag="p"
               lines={[wordmark]}
               duration={kit.slow}
-              className="w-auto whitespace-nowrap text-[length:clamp(2.75rem,8vw,7.5rem)] font-extrabold leading-[0.95] tracking-[-0.05em] [font-family:var(--font-heading)]"
+              className="w-auto whitespace-nowrap text-[length:clamp(2.75rem,8vw,7.5rem)] font-extrabold leading-[0.95] tracking-[-0.05em] [font-family:var(--font-heading)] text-center"
             />
           </div>
-          <motion.div {...rise(0.2)} className="flex flex-col gap-3 pb-[clamp(0.25rem,1.2vw,1rem)] font-mono text-[length:var(--text-label)] uppercase leading-[1.2] lg:flex-row lg:gap-4">
+          <motion.div {...rise(0.2)} className="flex flex-col items-center justify-center gap-3 pb-[clamp(0.25rem,1.2vw,1rem)] font-mono text-[length:var(--text-label)] uppercase leading-[1.2] text-center">
             {city && (
               <p className="whitespace-nowrap tabular-nums">
                 {city}: {time}
               </p>
             )}
-            <p className="whitespace-nowrap text-muted-foreground font-medium">{copyright}</p>
+            <p className="whitespace-nowrap text-muted-foreground font-medium text-center">{copyright}</p>
           </motion.div>
         </div>
       </footer>
