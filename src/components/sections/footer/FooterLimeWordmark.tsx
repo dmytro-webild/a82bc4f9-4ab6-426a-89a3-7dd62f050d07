@@ -10,7 +10,7 @@ import { AcsLogoIcon } from "@/components/ui/AcsLogo";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
-type FooterLink = { text: string; href?: string };
+type FooterLink = { text: string; href?: string; underline?: boolean };
 type FooterColumn = { title: string; links: FooterLink[] };
 
 type FooterLimeWordmarkProps = {
@@ -40,11 +40,11 @@ const formatTime = (timeZone: string) => {
 
 const getLinkIcon = (text: string) => {
   const lower = text.toLowerCase();
-  if (lower.includes("mansfield") || lower.includes("ma") || lower.includes("location")) {
-    return <MapPin className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
-  }
   if (lower.includes("@")) {
     return <Mail className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
+  }
+  if (lower.includes("mansfield") || lower.includes("location") || lower === "ma") {
+    return <MapPin className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
   }
   if (lower.includes("+") || /\d/.test(lower)) {
     return <Phone className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
@@ -121,7 +121,7 @@ const FooterLimeWordmark = ({
                           className="group flex flex-wrap items-center justify-center sm:justify-start gap-4 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white transition-colors hover:text-accent font-[family-name:var(--font-heading)] drop-shadow-md"
                         >
                           {getLinkIcon(link.text)}
-                          <span className="transition-all duration-200 group-hover:translate-x-1">{link.text}</span>
+                          <span className={cn("transition-all duration-200 group-hover:translate-x-1", (link.text === "Facebook Link" || link.underline) && "underline decoration-accent underline-offset-4")}>{link.text}</span>
                         </a>
                       </li>
                     ))}

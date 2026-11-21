@@ -42,7 +42,8 @@ export default function Layout() {
                 },
                 {
                   text: "Facebook Link",
-                  href: "https://www.facebook.com/TheACSHomes"
+                  href: "https://www.facebook.com/TheACSHomes",
+                  underline: true
                 }
               ]
             }
