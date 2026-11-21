@@ -16,21 +16,13 @@ export default function Layout() {
               href: "#cta"
             },
             {
-              name: "Pricing",
-              href: "#pricing"
-            },
-            {
-              name: "Reviews",
-              href: "#testimonial"
-            },
-            {
               name: "FAQ",
               href: "#faq"
             }
           ]}
           primaryButton={{
-            text: "Start your build",
-            href: "#contact"
+            text: "Contact us",
+            href: "mailto:acshomes@gmail.com"
           }}
           introDelay={1.7}
         />
@@ -38,12 +30,12 @@ export default function Layout() {
       <main className="flex-grow" data-button="default" data-card="default" data-pattern="none">
         <Outlet />
       </main>
-      <footer data-webild-section="Footer" data-section="footer">
+      <footer id="contact" data-webild-section="Footer" data-section="footer">
         <FooterLimeWordmark
           description="Ready to discuss your custom build or home addition in Mansfield? Reach out to our team to start planning your dream home."
           primaryButton={{
             text: "Get in touch",
-            href: "#contact"
+            href: "mailto:acshomes@gmail.com"
           }}
           columns={[
             {
@@ -58,20 +50,8 @@ export default function Layout() {
                   href: "#cta"
                 },
                 {
-                  text: "Pricing Plans",
-                  href: "#pricing"
-                },
-                {
-                  text: "Testimonials",
-                  href: "#testimonial"
-                },
-                {
                   text: "FAQ",
                   href: "#faq"
-                },
-                {
-                  text: "Contact",
-                  href: "#contact"
                 }
               ]
             },
@@ -79,16 +59,16 @@ export default function Layout() {
               title: "Contact & Location",
               links: [
                 {
-                  text: "124 N Main St, Mansfield, MA 02048",
-                  href: "#contact"
+                  text: "Mansfield, MA",
+                  href: "#faq"
                 },
                 {
-                  text: "info@acshomesinc.com",
-                  href: "mailto:info@acshomesinc.com"
+                  text: "acshomes@gmail.com",
+                  href: "mailto:acshomes@gmail.com"
                 },
                 {
-                  text: "Mon-Fri: 7:00 AM - 5:00 PM",
-                  href: "#contact"
+                  text: "+1 508 397 3011",
+                  href: "tel:+15083973011"
                 }
               ]
             }
