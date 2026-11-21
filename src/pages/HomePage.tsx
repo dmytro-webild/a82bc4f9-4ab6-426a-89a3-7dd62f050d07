@@ -27,7 +27,7 @@ export default function HomePage() {
           description=""
           items={[
             {
-              title: "Where are you located?",
+              title: "Where are we located?",
               description: "We are located in Mansfield, MA, serving Mansfield and surrounding towns."
             },
             {
@@ -35,7 +35,7 @@ export default function HomePage() {
               description: "Yes, we provide itemized cost breakdowns following an initial site consultation and plan review."
             },
             {
-              title: "What types of projects do you take on?",
+              title: "What types of projects do we take on?",
               description: "We handle custom home builds, structural additions, interior gut remodels, and exterior renovations."
             }
           ]}
