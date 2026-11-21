@@ -35,7 +35,7 @@ const LINES = [
 const HeroColumnGrid = ({
   title = "Custom Homes And Quality Remodeling",
   description = "",
-  primaryButton = { text: "Start your project", href: "mailto:acshomes@gmail.com" },
+  primaryButton,
   imageSrc = "https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&w=1600",
   imageAlt = "",
   scrollHint = "",
@@ -126,16 +126,46 @@ const HeroColumnGrid = ({
               <HydraArrowPill text={primaryButton.text} href={primaryButton.href} tone="lime" />
             </motion.div>
           )}
+          {!primaryButton && scrollHint && (
+            <motion.div {...rise(introDelay + 0.32)} className="mt-[2rem]">
+              <a href="#faq" className="group inline-flex items-center gap-3 rounded-full border border-white/40 bg-black/70 px-6 py-3.5 backdrop-blur-md shadow-2xl transition-all duration-300 hover:border-accent hover:bg-black/90">
+                <span className="font-mono text-sm font-bold uppercase tracking-wider text-white group-hover:text-accent">{scrollHint}</span>
+                <motion.svg
+                  animate={{ y: [0, 4, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  className="size-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </motion.svg>
+              </a>
+            </motion.div>
+          )}
         </motion.div>
 
         {scrollHint && (
-          <motion.p
+          <motion.a
+            href="#faq"
             {...rise(introDelay + 0.6)}
             style={{ opacity: textOpacity }}
-            className="absolute inset-x-0 bottom-[var(--gutter)] z-[3] text-center font-[family-name:var(--font-label)] text-[length:var(--text-label)] uppercase leading-[1.2] tracking-[-0.04em] text-white"
+            className="absolute inset-x-0 bottom-[var(--gutter)] z-[3] flex flex-col items-center justify-center gap-1.5 text-center font-[family-name:var(--font-label)] text-[length:var(--text-label)] uppercase leading-[1.2] tracking-wider text-white/90 hover:text-accent transition-colors"
           >
-            {scrollHint}
-          </motion.p>
+            <span>{scrollHint}</span>
+            <motion.svg
+              animate={{ y: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              className="size-5 text-accent"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </motion.svg>
+          </motion.a>
         )}
 
         {live && <motion.div aria-hidden="true" style={{ opacity: shade }} className="pointer-events-none absolute inset-0 z-[8] bg-black" />}
