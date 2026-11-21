@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavbarBoxLinks from "@/components/navbars/NavbarBoxLinks";
 import FooterLimeWordmark from "@/components/sections/footer/FooterLimeWordmark";
+import AcsLogo from "@/components/ui/AcsLogo";
 
 export default function Layout() {
   return (
@@ -8,10 +9,11 @@ export default function Layout() {
       <header data-webild-section="Header">
         <NavbarBoxLinks
           brand="ACS Homes Inc"
+          logo={<AcsLogo />}
           navItems={[
             {
-              name: "Portfolio",
-              href: "#gallery"
+              name: "Services",
+              href: "#cta"
             },
             {
               name: "Pricing",
@@ -52,12 +54,12 @@ export default function Layout() {
                   href: "#hero"
                 },
                 {
-                  text: "Portfolio",
-                  href: "#gallery"
-                },
-                {
                   text: "Builds & Renovations",
                   href: "#cta"
+                },
+                {
+                  text: "Pricing Plans",
+                  href: "#pricing"
                 },
                 {
                   text: "Testimonials",

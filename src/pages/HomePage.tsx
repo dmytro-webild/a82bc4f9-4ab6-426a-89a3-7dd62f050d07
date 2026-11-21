@@ -1,5 +1,4 @@
 import HeroColumnGrid from "@/components/sections/hero/HeroColumnGrid";
-import GalleryProjectTrack from "@/components/sections/gallery/GalleryProjectTrack";
 import CtaPlusBand from "@/components/sections/statement/CtaPlusBand";
 import PricingGlyphPlans from "@/components/sections/pricing/PricingGlyphPlans";
 import TestimonialDeepCoverflow from "@/components/sections/testimonial/TestimonialDeepCoverflow";
@@ -28,49 +27,6 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="gallery" data-webild-section="GalleryProjectTrack" data-webild-section-id="GalleryProjectTrack-1" data-section="gallery" data-scene>
-        <GalleryProjectTrack
-          title="Featured Homes"
-          hoverLabel="View Build"
-          button={{
-            text: "Start Your Build",
-            href: "#contact"
-          }}
-          items={[
-            {
-              title: "North Main Estate",
-              imageSrc: "https://img.b2bpic.net/free-photo/modern-luxury-home-with-contemporary-architecture_84443-74095.jpg",
-              imageAlt: "Modern Luxury Home with Contemporary Architecture"
-            },
-            {
-              title: "Willow Creek Residence",
-              imageSrc: "https://img.b2bpic.net/free-photo/close-up-minimalist-fireplace-with-brick-wall_23-2148238531.jpg",
-              imageAlt: "Close-up minimalist fireplace with brick wall"
-            },
-            {
-              title: "Oakridge Luxury Kitchen",
-              imageSrc: "https://img.b2bpic.net/free-photo/beautiful-shot-modern-house-kitchen-dining-room_181624-2870.jpg",
-              imageAlt: "modern kitchen with skylight"
-            },
-            {
-              title: "Mansfield Modern Farmhouse",
-              imageSrc: "https://img.b2bpic.net/free-photo/pillow-green-white-couch-lamp_1203-5118.jpg",
-              imageAlt: "pillow green white couch lamp"
-            },
-            {
-              title: "Pinecrest Master Suite",
-              imageSrc: "https://img.b2bpic.net/free-photo/beautiful-luxury-white-bathtub-decoration_1203-3390.jpg",
-              imageAlt: "Beautiful luxury white bathtub decoration"
-            },
-            {
-              title: "Foxboro Road Rebuild",
-              imageSrc: "https://img.b2bpic.net/free-photo/aerial-view-waterfront-luxury-home-construction-site-gold-coast_1308-190353.jpg",
-              imageAlt: "aerial view of construction site"
-            }
-          ]}
-        />
-      </div>
-
       <div id="cta" data-webild-section="CtaPlusBand" data-webild-section-id="CtaPlusBand-1" data-section="cta">
         <CtaPlusBand
           label="Start Building"
@@ -80,8 +36,8 @@ export default function HomePage() {
             href: "#contact"
           }}
           secondaryButton={{
-            text: "View Our Work",
-            href: "#gallery"
+            text: "View Investment Tiers",
+            href: "#pricing"
           }}
         />
       </div>

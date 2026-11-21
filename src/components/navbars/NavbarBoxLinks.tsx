@@ -11,6 +11,7 @@ type Button = { text: string; href: string };
 type NavbarBoxLinksProps = {
   brand?: string;
   logoSrc?: string;
+  logo?: React.ReactNode;
   navItems?: NavItem[];
   primaryButton?: Button;
   menuText?: string;
@@ -30,6 +31,7 @@ const DEFAULT_ITEMS: NavItem[] = [
 const NavbarBoxLinks = ({
   brand = "©Solvar",
   logoSrc,
+  logo: customLogo,
   navItems = DEFAULT_ITEMS,
   primaryButton = { text: "Contact us", href: "#contact" },
   menuText = "Menu",
@@ -52,8 +54,10 @@ const NavbarBoxLinks = ({
     animate(shift, hide ? -140 : 0, { duration: reduce ? 0 : 0.6, ease: EASE_OUT });
   });
 
-  const logo = logoSrc ? (
-    <img src={logoSrc} alt={brand} loading="eager" decoding="async" className="h-[1.5rem] w-auto max-w-[8rem] object-contain" />
+  const logo = customLogo ? (
+    customLogo
+  ) : logoSrc ? (
+    <img src={logoSrc} alt={brand} loading="eager" decoding="async" className="h-[1.75rem] w-auto max-w-[10rem] object-contain" />
   ) : (
     <p className="whitespace-nowrap font-[family-name:var(--font-heading)] text-[length:var(--text-body-lg)] leading-none tracking-[-0.05em]">{brand}</p>
   );
