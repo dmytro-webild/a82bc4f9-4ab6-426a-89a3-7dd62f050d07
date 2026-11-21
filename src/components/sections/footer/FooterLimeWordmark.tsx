@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { MapPin, Mail, Phone } from "lucide-react";
 import MaskedLineReveal from "@/components/animation/MaskedLineReveal";
 import HydraArrowPill from "@/components/kit/HydraArrowPill";
 import { useKitMotion } from "@/components/kit/kitMotion";
@@ -37,6 +38,20 @@ const formatTime = (timeZone: string) => {
   }
 };
 
+const getLinkIcon = (text: string) => {
+  const lower = text.toLowerCase();
+  if (lower.includes("mansfield") || lower.includes("ma") || lower.includes("location")) {
+    return <MapPin className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
+  }
+  if (lower.includes("@")) {
+    return <Mail className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
+  }
+  if (lower.includes("+") || /\d/.test(lower)) {
+    return <Phone className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
+  }
+  return null;
+};
+
 const FooterLimeWordmark = ({
   description = "Start your project today. Tell us about your site and let's work together to reach your goals.",
   primaryButton = { text: "Start a project", href: "#contact" },
@@ -67,17 +82,17 @@ const FooterLimeWordmark = ({
   });
 
   return (
-    <section aria-label={ariaLabel ?? "Footer"} data-tone="deep" className={cn("relative flex flex-col overflow-hidden bg-background pb-2 pt-[var(--section-space)] text-foreground", className)}>
+    <section aria-label={ariaLabel ?? "Footer"} data-tone="deep" className={cn("relative flex flex-col overflow-hidden bg-background pb-6 pt-[var(--section-space)] text-foreground", className)}>
       <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/2 grid w-[var(--container)] -translate-x-1/2 grid-cols-4">
         {[0, 1, 2, 3].map((column) => (
           <div key={column} className="border-l border-[color-mix(in_srgb,var(--deep-foreground)_8%,transparent)] last:border-r" />
         ))}
       </div>
-      <footer className="relative mx-auto flex w-[var(--container)] flex-col gap-[clamp(3.5rem,7.5vw,7rem)]">
-        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-[var(--gap)]">
-          <div className="flex max-w-[25rem] flex-col items-start gap-4">
+      <footer className="relative mx-auto flex w-[var(--container)] flex-col gap-[clamp(3rem,6vw,5.5rem)]">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+          <div className="flex max-w-[28rem] flex-col items-start gap-5">
             {description && (
-              <motion.p {...rise(0)} className="text-balance text-[length:var(--text-body-lg)] font-medium leading-[1.2] tracking-[-0.04em]">
+              <motion.p {...rise(0)} className="text-balance text-[length:var(--text-body-lg)] font-semibold leading-[1.3] tracking-[-0.03em] text-foreground">
                 {description}
               </motion.p>
             )}
@@ -87,15 +102,22 @@ const FooterLimeWordmark = ({
               </motion.div>
             )}
           </div>
-          <div className="flex flex-wrap gap-x-[clamp(3rem,5.5vw,5rem)] gap-y-10">
+          <div className="flex flex-1 flex-col gap-6 lg:max-w-[42rem]">
             {columns.map((column, index) => (
-              <motion.div key={column.title} {...rise(0.1 + index * 0.08)} className="flex flex-col gap-5 lg:flex-row lg:gap-16">
-                <p className="whitespace-nowrap pt-1 font-mono text-[length:var(--text-label)] uppercase leading-[1.2] before:content-['↳_']">{column.title}</p>
-                <ul className="flex flex-col gap-3">
+              <motion.div key={column.title} {...rise(0.1 + index * 0.08)} className="flex flex-col gap-6 rounded-2xl border border-white/20 bg-black/50 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+                <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-accent">
+                  <span className="size-2.5 rounded-full bg-accent inline-block" />
+                  <p>{column.title}</p>
+                </div>
+                <ul className="flex flex-col gap-5">
                   {column.links.map((link) => (
                     <li key={link.text}>
-                      <a href={link.href ?? "#"} className="whitespace-nowrap text-[length:var(--text-body-lg)] sm:text-[length:var(--text-h3)] font-medium leading-[1.3] tracking-[-0.03em] transition-opacity hover:opacity-70">
-                        {link.text}
+                      <a
+                        href={link.href ?? "#"}
+                        className="group flex flex-wrap items-center gap-4 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white transition-colors hover:text-accent font-[family-name:var(--font-heading)] drop-shadow-md"
+                      >
+                        {getLinkIcon(link.text)}
+                        <span className="transition-all duration-200 group-hover:translate-x-1">{link.text}</span>
                       </a>
                     </li>
                   ))}
@@ -104,14 +126,14 @@ const FooterLimeWordmark = ({
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-4 pt-4 border-t border-white/10 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex items-center gap-4">
-            <AcsLogoIcon className="h-[clamp(3rem,7vw,6rem)] w-auto shrink-0" />
+            <AcsLogoIcon className="h-[clamp(3rem,7vw,5.5rem)] w-auto shrink-0" />
             <MaskedLineReveal
               tag="p"
               lines={[wordmark]}
               duration={kit.slow}
-              className="w-auto whitespace-nowrap text-[length:clamp(3.5rem,9.5vw,8.5rem)] leading-[0.95] tracking-[-0.05em] [font-family:var(--font-heading)]"
+              className="w-auto whitespace-nowrap text-[length:clamp(2.75rem,8vw,7.5rem)] font-extrabold leading-[0.95] tracking-[-0.05em] [font-family:var(--font-heading)]"
             />
           </div>
           <motion.div {...rise(0.2)} className="flex flex-col gap-3 pb-[clamp(0.25rem,1.2vw,1rem)] font-mono text-[length:var(--text-label)] uppercase leading-[1.2] lg:flex-row lg:gap-4">
@@ -120,7 +142,7 @@ const FooterLimeWordmark = ({
                 {city}: {time}
               </p>
             )}
-            <p className="whitespace-nowrap">{copyright}</p>
+            <p className="whitespace-nowrap text-muted-foreground font-medium">{copyright}</p>
           </motion.div>
         </div>
       </footer>
