@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, Facebook } from "lucide-react";
 import MaskedLineReveal from "@/components/animation/MaskedLineReveal";
 import HydraArrowPill from "@/components/kit/HydraArrowPill";
 import { useKitMotion } from "@/components/kit/kitMotion";
@@ -48,6 +48,9 @@ const getLinkIcon = (text: string) => {
   }
   if (lower.includes("+") || /\d/.test(lower)) {
     return <Phone className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
+  }
+  if (lower.includes("facebook")) {
+    return <Facebook className="size-7 sm:size-9 text-accent shrink-0 stroke-[2.25]" />;
   }
   return null;
 };
@@ -113,6 +116,8 @@ const FooterLimeWordmark = ({
                       <li key={link.text}>
                         <a
                           href={link.href ?? "#"}
+                          target={link.href?.startsWith("http") ? "_blank" : undefined}
+                          rel={link.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                           className="group flex flex-wrap items-center justify-center sm:justify-start gap-4 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white transition-colors hover:text-accent font-[family-name:var(--font-heading)] drop-shadow-md"
                         >
                           {getLinkIcon(link.text)}

@@ -39,6 +39,10 @@ export default function Layout() {
                 {
                   text: "+1 508 397 3011",
                   href: "tel:+15083973011"
+                },
+                {
+                  text: "Facebook",
+                  href: "https://www.facebook.com/TheACSHomes"
                 }
               ]
             }
