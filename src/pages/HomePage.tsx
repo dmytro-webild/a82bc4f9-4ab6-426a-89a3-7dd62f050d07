@@ -1,5 +1,4 @@
 import HeroColumnGrid from "@/components/sections/hero/HeroColumnGrid";
-import CtaPlusBand from "@/components/sections/statement/CtaPlusBand";
 import FaqGlyphRows from "@/components/sections/faq/FaqGlyphRows";
 import LoaderHairlineColumns from "@/components/loaders/LoaderHairlineColumns";
 
@@ -12,7 +11,7 @@ export default function HomePage() {
 
       <div id="hero" data-webild-section="HeroColumnGrid" data-webild-section-id="HeroColumnGrid-1" data-section="hero" data-scene>
         <HeroColumnGrid
-          title="Custom homes and luxury rebuilds in Mansfield"
+          title="Custom Homes And Quality Remodeling"
           description="ACS Homes Inc builds custom homes, seamless additions, and high-end renovations built to last generations."
           primaryButton={{
             text: "Start your project",
@@ -24,22 +23,10 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="cta" data-webild-section="CtaPlusBand" data-webild-section-id="CtaPlusBand-1" data-section="cta">
-        <CtaPlusBand
-          label="Start Building"
-          title="Ready to build your dream home in Mansfield?"
-          primaryButton={{
-            text: "Request Quote",
-            href: "mailto:acshomes@gmail.com"
-          }}
-        />
-      </div>
-
       <div id="faq" data-webild-section="FaqGlyphRows" data-webild-section-id="FaqGlyphRows-1" data-section="faq">
         <FaqGlyphRows
           label="Details"
           title="Before you build"
-          description="Common questions about process, permits, and planning."
           button={{
             text: "Contact us",
             href: "mailto:acshomes@gmail.com"

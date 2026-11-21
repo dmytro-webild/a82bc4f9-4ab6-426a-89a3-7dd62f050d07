@@ -33,7 +33,7 @@ const defaults: Question[] = [
 const FaqGlyphRows = ({
   label = "FAQ",
   title = "Questions we hear most",
-  description = "Straight answers on sites, financing and running a plant with us.",
+  description,
   button = { text: "Contact us", href: "#contact" },
   items = defaults,
   ariaLabel,

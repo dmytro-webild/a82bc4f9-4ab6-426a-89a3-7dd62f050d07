@@ -42,7 +42,7 @@ const FooterLimeWordmark = ({
   primaryButton = { text: "Start a project", href: "#contact" },
   columns = defaultColumns,
   wordmark = "©Studio",
-  city = "Amsterdam",
+  city,
   timeZone = "Europe/Amsterdam",
   copyright = "©2026 All rights reserved",
   ariaLabel,
@@ -91,10 +91,10 @@ const FooterLimeWordmark = ({
             {columns.map((column, index) => (
               <motion.div key={column.title} {...rise(0.1 + index * 0.08)} className="flex flex-col gap-5 lg:flex-row lg:gap-16">
                 <p className="whitespace-nowrap pt-1 font-mono text-[length:var(--text-label)] uppercase leading-[1.2] before:content-['↳_']">{column.title}</p>
-                <ul className="flex flex-col gap-1">
+                <ul className="flex flex-col gap-3">
                   {column.links.map((link) => (
                     <li key={link.text}>
-                      <a href={link.href ?? "#"} className="whitespace-nowrap text-[length:var(--text-body)] leading-[1.35] tracking-[-0.03em] transition-opacity hover:opacity-70">
+                      <a href={link.href ?? "#"} className="whitespace-nowrap text-[length:var(--text-body-lg)] sm:text-[length:var(--text-h3)] font-medium leading-[1.3] tracking-[-0.03em] transition-opacity hover:opacity-70">
                         {link.text}
                       </a>
                     </li>
@@ -115,9 +115,11 @@ const FooterLimeWordmark = ({
             />
           </div>
           <motion.div {...rise(0.2)} className="flex flex-col gap-3 pb-[clamp(0.25rem,1.2vw,1rem)] font-mono text-[length:var(--text-label)] uppercase leading-[1.2] lg:flex-row lg:gap-4">
-            <p className="whitespace-nowrap tabular-nums">
-              {city}: {time}
-            </p>
+            {city && (
+              <p className="whitespace-nowrap tabular-nums">
+                {city}: {time}
+              </p>
+            )}
             <p className="whitespace-nowrap">{copyright}</p>
           </motion.div>
         </div>

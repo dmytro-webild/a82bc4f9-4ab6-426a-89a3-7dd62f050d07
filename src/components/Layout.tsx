@@ -10,16 +10,7 @@ export default function Layout() {
         <NavbarBoxLinks
           brand="ACS Homes Inc"
           logo={<AcsLogo />}
-          navItems={[
-            {
-              name: "Services",
-              href: "#cta"
-            },
-            {
-              name: "FAQ",
-              href: "#faq"
-            }
-          ]}
+          navItems={[]}
           primaryButton={{
             text: "Contact us",
             href: "mailto:acshomes@gmail.com"
@@ -32,29 +23,12 @@ export default function Layout() {
       </main>
       <footer id="contact" data-webild-section="Footer" data-section="footer">
         <FooterLimeWordmark
-          description="Ready to discuss your custom build or home addition in Mansfield? Reach out to our team to start planning your dream home."
+          description="Reach out to our team to start planning your dream home."
           primaryButton={{
             text: "Get in touch",
             href: "mailto:acshomes@gmail.com"
           }}
           columns={[
-            {
-              title: "Pages",
-              links: [
-                {
-                  text: "Home",
-                  href: "#hero"
-                },
-                {
-                  text: "Builds & Renovations",
-                  href: "#cta"
-                },
-                {
-                  text: "FAQ",
-                  href: "#faq"
-                }
-              ]
-            },
             {
               title: "Contact & Location",
               links: [
@@ -74,8 +48,6 @@ export default function Layout() {
             }
           ]}
           wordmark="ACS HOMES INC"
-          city="Mansfield, MA"
-          timeZone="America/New_York"
           copyright="©2026 ACS Homes Inc. All rights reserved."
         />
       </footer>
