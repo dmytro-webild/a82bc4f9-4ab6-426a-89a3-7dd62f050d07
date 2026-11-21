@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import MaskedLineReveal from "@/components/animation/MaskedLineReveal";
 import HydraArrowPill from "@/components/kit/HydraArrowPill";
 import { useKitMotion } from "@/components/kit/kitMotion";
+import { AcsLogoIcon } from "@/components/ui/AcsLogo";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -104,12 +105,15 @@ const FooterLimeWordmark = ({
           </div>
         </div>
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <MaskedLineReveal
-            tag="p"
-            lines={[wordmark]}
-            duration={kit.slow}
-            className="w-auto whitespace-nowrap text-[length:clamp(4rem,11vw,10rem)] leading-[0.95] tracking-[-0.05em] [font-family:var(--font-heading)]"
-          />
+          <div className="flex items-center gap-4">
+            <AcsLogoIcon className="h-[clamp(3rem,7vw,6rem)] w-auto shrink-0" />
+            <MaskedLineReveal
+              tag="p"
+              lines={[wordmark]}
+              duration={kit.slow}
+              className="w-auto whitespace-nowrap text-[length:clamp(3.5rem,9.5vw,8.5rem)] leading-[0.95] tracking-[-0.05em] [font-family:var(--font-heading)]"
+            />
+          </div>
           <motion.div {...rise(0.2)} className="flex flex-col gap-3 pb-[clamp(0.25rem,1.2vw,1rem)] font-mono text-[length:var(--text-label)] uppercase leading-[1.2] lg:flex-row lg:gap-4">
             <p className="whitespace-nowrap tabular-nums">
               {city}: {time}

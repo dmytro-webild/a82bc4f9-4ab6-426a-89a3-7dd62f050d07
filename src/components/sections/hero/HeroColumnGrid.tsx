@@ -4,6 +4,7 @@ import { useCoverNext } from "@/components/kit/sectionNeighbour";
 import MaskedLineReveal from "@/components/animation/MaskedLineReveal";
 import HydraArrowPill from "@/components/kit/HydraArrowPill";
 import Media from "@/components/kit/Media";
+import { AcsLogoIcon } from "@/components/ui/AcsLogo";
 
 type Cta = { text: string; href?: string };
 
@@ -99,6 +100,10 @@ const HeroColumnGrid = ({
           style={{ opacity: textOpacity, y: textY }}
           className="absolute inset-0 z-[3] mx-auto flex w-[var(--container)] flex-col items-center justify-center pt-[4.5rem] text-center"
         >
+          <motion.div {...rise(introDelay - 0.1)} className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 backdrop-blur-md">
+            <AcsLogoIcon className="h-5 w-auto" />
+            <span className="font-mono text-[0.75rem] font-medium uppercase tracking-wider text-white">ACS HOMES INC • MANSFIELD, MA</span>
+          </motion.div>
           <MaskedLineReveal
             tag="h1"
             text={title}
