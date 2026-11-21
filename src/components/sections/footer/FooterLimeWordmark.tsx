@@ -54,7 +54,7 @@ const getLinkIcon = (text: string) => {
 
 const FooterLimeWordmark = ({
   description = "Start your project today. Tell us about your site and let's work together to reach your goals.",
-  primaryButton = { text: "Start a project", href: "#contact" },
+  primaryButton,
   columns = defaultColumns,
   wordmark = "©Studio",
   city,
@@ -89,42 +89,42 @@ const FooterLimeWordmark = ({
         ))}
       </div>
       <footer className="relative mx-auto flex w-[var(--container)] flex-col gap-[clamp(3rem,6vw,5.5rem)]">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
-          <div className="flex max-w-[28rem] flex-col items-start gap-5">
-            {description && (
-              <motion.p {...rise(0)} className="text-balance text-[length:var(--text-body-lg)] font-semibold leading-[1.3] tracking-[-0.03em] text-foreground">
-                {description}
-              </motion.p>
-            )}
-            {primaryButton && (
-              <motion.div {...rise(0.1)}>
-                <HydraArrowPill text={primaryButton.text} href={primaryButton.href} tone="lime" />
-              </motion.div>
-            )}
-          </div>
-          <div className="flex flex-1 flex-col gap-6 lg:max-w-[42rem]">
-            {columns.map((column, index) => (
-              <motion.div key={column.title} {...rise(0.1 + index * 0.08)} className="flex flex-col gap-6 rounded-2xl border border-white/20 bg-black/50 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
-                <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-accent">
-                  <span className="size-2.5 rounded-full bg-accent inline-block" />
-                  <p>{column.title}</p>
-                </div>
-                <ul className="flex flex-col gap-5">
-                  {column.links.map((link) => (
-                    <li key={link.text}>
-                      <a
-                        href={link.href ?? "#"}
-                        className="group flex flex-wrap items-center gap-4 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white transition-colors hover:text-accent font-[family-name:var(--font-heading)] drop-shadow-md"
-                      >
-                        {getLinkIcon(link.text)}
-                        <span className="transition-all duration-200 group-hover:translate-x-1">{link.text}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+        <div className="flex flex-col items-center justify-center text-center gap-8 max-w-4xl mx-auto w-full">
+          {description && (
+            <motion.p {...rise(0)} className="text-balance text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[1.25] tracking-[-0.03em] text-foreground text-center font-[family-name:var(--font-heading)]">
+              {description}
+            </motion.p>
+          )}
+          {primaryButton && (
+            <motion.div {...rise(0.1)}>
+              <HydraArrowPill text={primaryButton.text} href={primaryButton.href} tone="lime" />
+            </motion.div>
+          )}
+          {columns && columns.length > 0 && (
+            <div className="w-full flex flex-col gap-6 max-w-[42rem] text-left">
+              {columns.map((column, index) => (
+                <motion.div key={column.title} {...rise(0.1 + index * 0.08)} className="flex flex-col gap-6 rounded-2xl border border-white/20 bg-black/50 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+                  <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-accent justify-center sm:justify-start">
+                    <span className="size-2.5 rounded-full bg-accent inline-block" />
+                    <p>{column.title}</p>
+                  </div>
+                  <ul className="flex flex-col gap-5 items-center sm:items-start">
+                    {column.links.map((link) => (
+                      <li key={link.text}>
+                        <a
+                          href={link.href ?? "#"}
+                          className="group flex flex-wrap items-center justify-center sm:justify-start gap-4 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white transition-colors hover:text-accent font-[family-name:var(--font-heading)] drop-shadow-md"
+                        >
+                          {getLinkIcon(link.text)}
+                          <span className="transition-all duration-200 group-hover:translate-x-1">{link.text}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
         <div className="flex flex-col gap-4 pt-4 border-t border-white/10 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex items-center gap-4">

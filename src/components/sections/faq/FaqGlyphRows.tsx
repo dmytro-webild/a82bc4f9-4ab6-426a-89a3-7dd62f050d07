@@ -31,10 +31,10 @@ const defaults: Question[] = [
 ];
 
 const FaqGlyphRows = ({
-  label = "FAQ",
+  label,
   title = "Questions we hear most",
   description,
-  button = { text: "Contact us", href: "#contact" },
+  button,
   items = defaults,
   ariaLabel,
   className,

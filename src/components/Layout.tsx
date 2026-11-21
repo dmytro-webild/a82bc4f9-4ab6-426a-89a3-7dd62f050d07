@@ -24,10 +24,6 @@ export default function Layout() {
       <footer id="contact" data-webild-section="Footer" data-section="footer">
         <FooterLimeWordmark
           description="Reach out to our team to start planning your dream home."
-          primaryButton={{
-            text: "Get in touch",
-            href: "mailto:acshomes@gmail.com"
-          }}
           columns={[
             {
               title: "Contact & Location",
