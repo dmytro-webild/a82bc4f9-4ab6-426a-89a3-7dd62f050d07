@@ -16,6 +16,7 @@ type FaqGlyphRowsProps = {
   description?: string;
   button?: { text: string; href: string };
   items?: Question[];
+  underlineTitle?: boolean;
   ariaLabel?: string;
   className?: string;
 };
@@ -32,10 +33,11 @@ const defaults: Question[] = [
 
 const FaqGlyphRows = ({
   label,
-  title = "Questions we hear most",
+  title = "Before You Build",
   description,
   button,
   items = defaults,
+  underlineTitle = true,
   ariaLabel,
   className,
 }: FaqGlyphRowsProps) => {
@@ -73,7 +75,10 @@ const FaqGlyphRows = ({
               stagger={0.06}
               duration={kit.base}
               ease={kit.ease}
-              className="max-w-[12em] text-balance text-[length:var(--text-h2)] leading-[var(--heading-leading)] tracking-[var(--heading-tracking)] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [overflow-wrap:anywhere]"
+              className={cn(
+                "max-w-[12em] text-balance text-[length:var(--text-h2)] leading-[var(--heading-leading)] tracking-[var(--heading-tracking)] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [overflow-wrap:anywhere]",
+                underlineTitle && "underline underline-offset-8 decoration-accent"
+              )}
             />
           )}
           {description && (

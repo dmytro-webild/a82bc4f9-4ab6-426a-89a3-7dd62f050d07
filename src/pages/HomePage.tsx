@@ -11,7 +11,7 @@ export default function HomePage() {
 
       <div id="hero" data-webild-section="HeroColumnGrid" data-webild-section-id="HeroColumnGrid-1" data-section="hero" data-scene>
         <HeroColumnGrid
-          title="Custom Homes And Quality Remodeling"
+          title="Customizing Homes And Quality Remodeling"
           description=""
           scrollHint="Scroll down"
           imageSrc="https://storage.googleapis.com/webild/users/user_3MQlVB3qfyl983V9ddFQF7LiGU6/uploaded-1795300158825-5mtbhdyk.jpg"
@@ -23,7 +23,7 @@ export default function HomePage() {
       <div id="faq" data-webild-section="FaqGlyphRows" data-webild-section-id="FaqGlyphRows-1" data-section="faq">
         <FaqGlyphRows
           label=""
-          title="Before you build"
+          title="Before You Build"
           description=""
           items={[
             {

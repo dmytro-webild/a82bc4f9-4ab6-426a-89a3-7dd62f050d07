@@ -33,7 +33,7 @@ const LINES = [
 ];
 
 const HeroColumnGrid = ({
-  title = "Custom Homes And Quality Remodeling",
+  title = "Customizing Homes And Quality Remodeling",
   description = "",
   primaryButton,
   imageSrc = "https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&w=1600",
