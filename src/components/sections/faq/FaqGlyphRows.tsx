@@ -77,7 +77,7 @@ const FaqGlyphRows = ({
               ease={kit.ease}
               className={cn(
                 "max-w-[12em] text-balance text-[length:var(--text-h2)] leading-[var(--heading-leading)] tracking-[var(--heading-tracking)] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [overflow-wrap:anywhere]",
-                underlineTitle && "underline underline-offset-8 decoration-accent"
+                underlineTitle && "underline underline-offset-8 decoration-black"
               )}
             />
           )}

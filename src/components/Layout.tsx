@@ -11,10 +11,6 @@ export default function Layout() {
           brand="ACS Homes Inc"
           logo={<AcsLogo />}
           navItems={[]}
-          primaryButton={{
-            text: "Contact us",
-            href: "mailto:acshomes@gmail.com"
-          }}
           introDelay={1.7}
         />
       </header>
