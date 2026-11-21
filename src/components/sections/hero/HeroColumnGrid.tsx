@@ -33,9 +33,9 @@ const LINES = [
 ];
 
 const HeroColumnGrid = ({
-  title = "Clean power for the industry that runs on it",
-  description = "We build and run solar, wind and battery infrastructure so industrial sites cut carbon without cutting output.",
-  primaryButton = { text: "Start a project", href: "#contact" },
+  title = "Custom Homes And Quality Remodeling",
+  description = "",
+  primaryButton = { text: "Start your project", href: "mailto:acshomes@gmail.com" },
   imageSrc = "https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&w=1600",
   imageAlt = "",
   scrollHint = "",
@@ -74,7 +74,7 @@ const HeroColumnGrid = ({
               className="size-full object-cover"
             />
           </motion.div>
-          <div aria-hidden="true" className="absolute inset-0 bg-black/35" />
+          <div aria-hidden="true" className="absolute inset-0 bg-black/60 bg-gradient-to-b from-black/80 via-black/50 to-black/85" />
         </div>
 
         <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/2 z-[2] w-full -translate-x-1/2 lg:w-[var(--container)]">
@@ -100,9 +100,9 @@ const HeroColumnGrid = ({
           style={{ opacity: textOpacity, y: textY }}
           className="absolute inset-0 z-[3] mx-auto flex w-[var(--container)] flex-col items-center justify-center pt-[4.5rem] text-center"
         >
-          <motion.div {...rise(introDelay - 0.1)} className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 backdrop-blur-md">
+          <motion.div {...rise(introDelay - 0.1)} className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/40 bg-black/70 px-5 py-2.5 backdrop-blur-md shadow-2xl">
             <AcsLogoIcon className="h-5 w-auto" />
-            <span className="font-mono text-[0.75rem] font-medium uppercase tracking-wider text-white">ACS HOMES INC • MANSFIELD, MA</span>
+            <span className="font-mono text-[0.8125rem] font-bold uppercase tracking-wider text-white">ACS HOMES INC • MANSFIELD, MA</span>
           </motion.div>
           <MaskedLineReveal
             tag="h1"
@@ -111,18 +111,18 @@ const HeroColumnGrid = ({
             delay={introDelay}
             stagger={0.1}
             duration={1.1}
-            className="w-[min(100%,44rem)] text-balance text-center font-[family-name:var(--font-heading)] text-[length:calc(var(--text-display)*1.2)] leading-[1.1] tracking-[-0.05em] text-white [font-weight:var(--heading-weight)] lg:text-[length:var(--text-display)]"
+            className="w-[min(100%,64rem)] text-balance text-center font-[family-name:var(--font-heading)] text-[clamp(2.75rem,7vw,6rem)] font-black leading-[1.05] tracking-[-0.04em] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.98)]"
           />
           {description && (
             <motion.p
               {...rise(introDelay + 0.2)}
-              className="mt-[1.5rem] w-[min(100%,31.25rem)] text-balance text-[length:calc(var(--text-body)*1.06)] leading-[1.35] tracking-[-0.03em] text-white/90"
+              className="mt-[1.5rem] w-[min(100%,31.25rem)] text-balance text-[length:calc(var(--text-body)*1.06)] leading-[1.35] tracking-[-0.03em] text-white/95"
             >
               {description}
             </motion.p>
           )}
           {primaryButton && (
-            <motion.div {...rise(introDelay + 0.32)} className="mt-[1.5rem]">
+            <motion.div {...rise(introDelay + 0.32)} className="mt-[2rem]">
               <HydraArrowPill text={primaryButton.text} href={primaryButton.href} tone="lime" />
             </motion.div>
           )}

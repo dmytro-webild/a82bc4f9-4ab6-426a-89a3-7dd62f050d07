@@ -12,7 +12,7 @@ export default function HomePage() {
       <div id="hero" data-webild-section="HeroColumnGrid" data-webild-section-id="HeroColumnGrid-1" data-section="hero" data-scene>
         <HeroColumnGrid
           title="Custom Homes And Quality Remodeling"
-          description="ACS Homes Inc builds custom homes, seamless additions, and high-end renovations built to last generations."
+          description=""
           primaryButton={{
             text: "Start your project",
             href: "mailto:acshomes@gmail.com"
@@ -27,6 +27,7 @@ export default function HomePage() {
         <FaqGlyphRows
           label="Details"
           title="Before you build"
+          description=""
           button={{
             text: "Contact us",
             href: "mailto:acshomes@gmail.com"
@@ -37,7 +38,7 @@ export default function HomePage() {
               description: "We are located in Mansfield, MA, serving Mansfield and surrounding towns."
             },
             {
-              title: "Do you provide estimates?",
+              title: "Do you provide FREE estimates",
               description: "Yes, we provide itemized cost breakdowns following an initial site consultation and plan review."
             },
             {
